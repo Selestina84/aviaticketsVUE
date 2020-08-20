@@ -1,56 +1,48 @@
 <template>
   <v-app>
-    <v-app-bar app color="primary" dark>
-      <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
+    <v-container>
+      <v-app-bar app color="deep-purple" dense dark>
+        <div class="app-bar d-flex justify-space-around">
+          <div class="d-flex align-center mr-auto">
+          <v-icon>mdi-airplane-takeoff</v-icon>
+          <v-toolbar-title>Avia Tickets</v-toolbar-title>
+        </div>
 
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
-      </div>
 
-      <v-spacer></v-spacer>
+        <v-btn class="ml-auto" text icon>
+          <span>Избранное</span>
+          <v-icon color="yellow lighten-2">mdi-star</v-icon>
+        </v-btn>
+        </div>
+      </v-app-bar>
 
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
-    </v-app-bar>
-
-    <v-main>
-      <HelloWorld />
-    </v-main>
+      <v-main>
+        <SearchForm />
+      </v-main>
+    </v-container>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld";
+import SearchForm from "@/components/SearchForm";
 
 export default {
   name: "App",
 
   components: {
-    HelloWorld
+    SearchForm
   },
 
   data: () => ({
     //
-  })
+  }),
 };
 </script>
+
+<style>
+.app-bar{
+  margin: 0 auto;
+  max-width: 1200px;
+  width: 100%;
+}
+</style>
